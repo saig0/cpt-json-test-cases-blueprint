@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.github.saig0</groupId>
+    <artifactId>cpt-json-test-cases-blueprint</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <camunda.version>8.9.0-alpha4</camunda.version>
+        <junit.version>6.0.2</junit.version>
+        <testcontainers.version>2.0.3</testcontainers.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-dependencies</artifactId>-->
+<!--                <version>4.0.1</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.ai</groupId>-->
+<!--                <artifactId>spring-ai-bom</artifactId>-->
+<!--                <version>2.0.0-M2</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+        <!-- Add Spring Boot Starter for Actuator as workaround to run with Java 25 -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>io.camunda</groupId>-->
+<!--            <artifactId>camunda-spring-boot-starter</artifactId>-->
+<!--            <version>${camunda.version}</version>-->
+<!--        </dependency>-->
+        <!-- Camunda Process Test Spring (test scope) -->
+        <dependency>
+            <groupId>io.camunda</groupId>
+            <artifactId>camunda-process-test-spring</artifactId>
+            <version>${camunda.version}</version>
+            <scope>test</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.testcontainers</groupId>-->
+<!--            <artifactId>testcontainers</artifactId>-->
+<!--            <version>${testcontainers.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+        <!-- JUnit Jupiter (test scope) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Assertions (used by CamundaAiAssertions library code) -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+        </dependency>
+
+        <!-- Spring AI -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-model</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-openai</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-bedrock-converse</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- HTTP stubbing -->
+<!--        <dependency>-->
+<!--            <groupId>org.wiremock.integrations</groupId>-->
+<!--            <artifactId>wiremock-spring-boot</artifactId>-->
+<!--            <version>3.10.6</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.icegreen</groupId>-->
+<!--            <artifactId>greenmail-spring</artifactId>-->
+<!--            <version>2.1.8</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
