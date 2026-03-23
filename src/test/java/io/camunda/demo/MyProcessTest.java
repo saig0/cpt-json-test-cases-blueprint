@@ -2,9 +2,9 @@ package io.camunda.demo;
 
 import io.camunda.client.annotation.Deployment;
 import io.camunda.process.test.api.CamundaSpringProcessTest;
-import io.camunda.process.test.api.dsl.TestCase;
-import io.camunda.process.test.api.dsl.TestScenarioRunner;
-import io.camunda.process.test.api.dsl.TestScenarioSource;
+import io.camunda.process.test.api.testCases.TestCase;
+import io.camunda.process.test.api.testCases.TestCaseRunner;
+import io.camunda.process.test.api.testCases.TestCaseSource;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,15 +15,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MyProcessTest {
 
     @Autowired
-    private TestScenarioRunner testScenarioRunner;
+    private TestCaseRunner testCaseRunner;
 
     @ParameterizedTest
-    @TestScenarioSource
-    void shouldPass(final TestCase testCase, final String scenarioFile) {
+    @TestCaseSource
+    void shouldPass(final TestCase testCase, final String fileName) {
         // given: the process definitions are deployed
 
         // when/then: run and verify the test case
-        testScenarioRunner.run(testCase);
+        testCaseRunner.run(testCase);
     }
 
     @SpringBootApplication
