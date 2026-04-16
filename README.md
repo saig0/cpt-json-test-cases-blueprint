@@ -21,5 +21,5 @@ mvn test
 
 ## Resources
 
-- [Camunda 8: CPT get-started](https://docs.camunda.io/docs/next/apis-tools/testing/getting-started/)
-- [Camunda 8: CPT JSON test cases](https://docs.camunda.io/docs/next/apis-tools/testing/json-test-cases/)
+- [Camunda 8: CPT get-started](https://docs.camunda.io/docs/apis-tools/testing/getting-started/)
+- [Camunda 8: CPT JSON test cases](https://docs.camunda.io/docs/apis-tools/testing/json-test-cases/)
