@@ -16,7 +16,7 @@ mvn test
 ## Content
 
 - Example BPMN process: [invoice-approval.bpmn](src/main/resources/bpmn/invoice-approval.bpmn)
-- Example JSON test cases: [invoice-approval.json](src/test/resources/scenarios/invoice-approval.json)
+- Example JSON test cases: [invoice-approval.json](src/test/resources/test-cases/invoice-approval.json)
 - CPT test class: [MyProcessTest.java](src/test/java/io/camunda/demo/MyProcessTest.java)
 
 ## Resources
